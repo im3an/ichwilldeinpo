@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    background: url('path/to/hellokitty.jpg') fixed; /* Replace 'path/to/hellokitty.jpg' with your image path */
+    background-size: cover;
+    animation: float 10s infinite alternate; /* Adjust animation duration and style */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.container {
+    text-align: center;
+    z-index: 1; /* Ensure the content is on top of the background */
+}
+
+.content {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: #ff9dd2; /* Cute pink color */
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+}
+
+#button1 {
+    position: absolute;
+    transition: transform 0.3s ease-out;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.confetti {
+    width: 8px;
+    height: 8px;
+    background-color: #ff9dd2; /* Base pink color */
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    animation: confetti-explode 3s ease-out;
+}
+
+@keyframes confetti-explode {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 1;
+    }
+}
